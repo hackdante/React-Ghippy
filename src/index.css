@@ -32,6 +32,23 @@ body {
   width: 90%;
 }
 
+.show-loader {
+  display: block;
+  margin: auto;
+  font-size: .9rem;
+  font-weight: 600;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 1);
+  padding: 12px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.hide-loader {
+  display: none;
+}
+
 .card-grid {
   display: flex;
   flex-direction: row;

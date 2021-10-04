@@ -1,21 +1,24 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from "react";
+
+//import { useState, useEffect } from "react";
 import { GifGridItem } from "./GifGridItem";
-import { getGifs } from "../helpers/getGifs";
+//import { getGifs } from "../helpers/getGifs";
+
+import { useFetchGifts } from "../hooks/useFetchGifs"
 
 
 export const GifGrid = ({ category }) => {
-    const [images, setImages] = useState([]);
-    const [count, setCount] = useState(0);
-    useEffect(() =>
-    getGifs(category).then(gif => setImages(gif)), [category]);
+
+    const { data: gif, loading } = useFetchGifts(category)
 
     return (
         <>
             <h3 className="text-center">{category}</h3>
+            <p className={loading ? 'show-loader' : 'hide-loader'}>
+                {loading && `Search Gif of ${category}...`}
+            </p>
             <div className="card-grid">
                 {
-                    images.map(gif => (
+                    gif.map(gif => (
                         < GifGridItem key={gif.id}
                             {...gif} />
                     ))
