@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { GifExpertApp } from './giftexpertapp';
 
 import './index.css';
+import 'animate.css'
 
 import reportWebVitals from './reportWebVitals';
 

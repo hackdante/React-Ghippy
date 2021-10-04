@@ -13,7 +13,7 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h3 className="text-center">{category}</h3>
-            <p className={loading ? 'show-loader' : 'hide-loader'}>
+            <p className={loading ? 'show-loader animate__animated animate__bounceIn' : 'hide-loader'}>
                 {loading && `Search Gif of ${category}...`}
             </p>
             <div className="card-grid">
@@ -23,7 +23,6 @@ export const GifGrid = ({ category }) => {
                             {...gif} />
                     ))
                 }
-
             </div>
         </>
     )
